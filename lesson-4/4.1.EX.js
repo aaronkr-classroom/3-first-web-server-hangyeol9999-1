@@ -8,7 +8,7 @@
  */
 
 // 애플리케이션에서 사용할 포트 번호인 3000을 지정한다. (80번호는 HTTP, 443번호는 HTTPS)
-const port = 3000;
+const port = 3001;
 
 
 // http라는 특정 Node.js 모듈을 가져와 상수로 저장한다.
@@ -62,7 +62,9 @@ const app = http.createServer((req, res) => {
 
   // 이 시점에서 응답로그를남기게 되면 여러분은 어떤 서버에서 어떤 응답을 보냈는지 확인이 가능하다.
   console.log("Sent response!");
-
+  console.log(req.method); // GET / POST
+  console.log(req.url); // about.html
+  console.log(req.headers); // Content-Type: Text/html
 });
 
 
